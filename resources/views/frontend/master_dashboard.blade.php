@@ -10,10 +10,10 @@
     <meta charset="utf-8" /> 
     <title> @yield('title')</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="title" content="{{ $seo->meta_title }}" />
-    <meta name="author" content="{{ $seo->meta_author }}" />
-    <meta name="keywords" content="{{ $seo->meta_keyword }}" />
-    <meta name="description" content="{{ $seo->meta_description }}" />
+    <meta name="title" content="{{ $seo->meta_title ?? 'None'}}" />
+    <meta name="author" content="{{ $seo->meta_author ?? 'None'}}" />
+    <meta name="keywords" content="{{ $seo->meta_keyword ?? 'None' }}" />
+    <meta name="description" content="{{ $seo->meta_description ?? 'None' }}" />
  
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -65,7 +65,7 @@
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="text-center">
-                    <img src="{{ asset('frontend/assets/imgs/theme/loading.gif') }}" alt="" />
+                    <img src="{{ asset('frontend/assets/imgs/theme/loading.gif') }}" width="66" height="66" alt="Shopnest">
                 </div>
             </div>
         </div>

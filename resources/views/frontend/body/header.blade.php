@@ -10,9 +10,9 @@
                         <div class="header-info">
                             <ul>
                                 
-                                <li><a href="page-account.html">My Cart</a></li>
-                                <li><a href="shop-wishlist.html">Checkout</a></li>
-                                <li><a href="shop-order.html">Order Tracking</a></li>
+                                <li><a href="{{ route('mycart') }}">My Cart</a></li>
+                                <li><a href="{{ route('checkout') }}">Checkout</a></li>
+                                <li><a href="{{ route('mycart') }}">Order Tracking</a></li>
                             </ul>
                         </div>
                     </div>
@@ -61,7 +61,7 @@ $setting = App\Models\SiteSetting::find(1);
             <div class="container">
                 <div class="header-wrap">
                     <div class="logo logo-width-1">
-                        <a href="index.html"><img src="{{ asset($setting->logo)   }}" alt="logo" /></a>
+                        <a href="index.html"><img src="{{ asset('frontend/assets/imgs/theme/logo.png')   }}" alt="logo " /></a>
                     </div>
     <div class="header-right">
         <div class="search-style-2">
@@ -92,19 +92,19 @@ $setting = App\Models\SiteSetting::find(1);
                     <form action="#">
                         <select class="select-active">
                             <option>Your Location</option>
-                            <option>Alabama</option>
-                            <option>Alaska</option>
-                            <option>Arizona</option>
-                            <option>Delaware</option>
-                            <option>Florida</option>
-                            <option>Georgia</option>
-                            <option>Hawaii</option>
-                            <option>Indiana</option>
-                            <option>Maryland</option>
-                            <option>Nevada</option>
-                            <option>New Jersey</option>
-                            <option>New Mexico</option>
-                            <option>New York</option>
+                            <option>Abdullahpur</option>
+                            <option>Uttara</option>
+                            <option>Mirpur</option>
+                            <option>Agargaon</option>
+                            <option>Banani</option>
+                            <option>Gulshan</option>
+                            <option>Mohakhali</option>
+                            <option>Dhanmondi</option>
+                            <option>Ramna</option>
+                            <option>Islampur</option>
+                            <option>Demra</option>
+                            <option>Wari</option>
+                            <option>Savar</option>
                         </select>
                     </form>
                 </div>
@@ -329,7 +329,7 @@ $setting = App\Models\SiteSetting::find(1);
 
 <div class="hotline d-none d-lg-flex">
     <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-headphone.svg') }}" alt="hotline" />
-    <p>{{ $setting->support_phone }}<span>24/7 Support Center</span></p>
+    <p>{{ $setting->support_phone ?? 'None' }}<span>24/7 Support Center</span></p>
 </div>
 <div class="header-action-icon-2 d-block d-lg-none">
     <div class="burger-icon burger-icon-white">

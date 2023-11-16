@@ -124,6 +124,10 @@ public function VendorUpdatePassword(Request $request){
             'password' => ['required', 'confirmed'],
         ]);
 
+
+
+        
+
         $user = User::insert([ 
             'name' => $request->name,
             'username' => $request->username,
