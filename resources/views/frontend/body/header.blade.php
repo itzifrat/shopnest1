@@ -30,8 +30,14 @@
                     <div class="col-xl-3 col-lg-4">
                         <div class="header-info header-info-right">
                             <ul>
-                               
-                <li>
+ 
+ 
+ 
+ 
+ 
+ 
+                                         
+                <!---<li>
                     <a class="language-dropdown-active" href="#">English <i class="fi-rs-angle-small-down"></i></a>
                     <ul class="language-dropdown">
                         <li>
@@ -44,7 +50,31 @@
                             <a href="#"><img src="{{ asset('frontend/assets/imgs/theme/flag-ru.png') }}" alt="" />Pусский</a>
                         </li>
                     </ul>
-                </li>
+                </li>-->
+                <!--
+               <div id="google_element"></div>
+                <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+                <script>
+                    function loadGoogleTranslate(){
+                        new google.translate.TranslateElement("google_element")
+                    }
+                </script>
+                -->
+                <!--
+                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    <div class="language">
+                        <select name="" class="form-control top-selector language_switcher">
+                            <option>{{ Config::get('languages')[App::getLocale()] }}</option>
+                            @foreach (Config::get('languages') as $lang => $language)
+                                @if ($lang != App::getLocale())
+                                       <option value="{{ $lang }}"> <a class="dropdown-item" href="#"> {{$language}}</a> </option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                -->
+
 
                  <li>Need help? Call Us: <strong class="text-brand"> + 1800 900</strong></li>
                                
@@ -326,11 +356,30 @@ $setting = App\Models\SiteSetting::find(1);
     </div>
 </div>
 
+<!-- chatbot  -->
 
-<div class="hotline d-none d-lg-flex">
-    <img src="{{ asset('frontend/assets/imgs/theme/icons/icon-headphone.svg') }}" alt="hotline" />
-    <p>{{ $setting->support_phone ?? 'None' }}<span>24/7 Support Center</span></p>
+<body>
+<button class="chatbot-toggler">
+    <span class="material-symbols-outlined">chat!</span>
+    <span class="material-symbols-outlined">close</span>
+</button>
+<div class="chatbot">
+    <header>
+        <h2>Chatbot</h2>
+        <span class="close-btn material-symbols-outlined">close</span>
+    </header>
+    <ul class="chatbox">
+        <li class="chat incoming">
+          <span class="material-symbols-outlined">S</span>
+          <p>Hi there 👋<br>How can I help you today?</p>
+        </li>
+    </ul>
+    <div class="chat-input">
+        <textarea placeholder="Enter a message..." required></textarea>
+        <span id="send-btn" class="material-symbols-outlined">send</span>
+    </div>
 </div>
+</body>
 <div class="header-action-icon-2 d-block d-lg-none">
     <div class="burger-icon burger-icon-white">
         <span class="burger-icon-top"></span>
@@ -409,7 +458,8 @@ $setting = App\Models\SiteSetting::find(1);
         margin-top: 5px;
     }
 </style>
-
+<!-- JS Chatbot  -->
+<script src="script.js" defer></script>
 <script>
     function search_result_show(){
         $("#searchProducts").slideDown();
@@ -420,7 +470,31 @@ $setting = App\Models\SiteSetting::find(1);
         $("#searchProducts").slideUp();
     }
 </script>
-
+<!-- JS MultiLanguage -->
+<!--
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$("body").on("change", ".language_switcher", function(event) {
+    event.preventDefault();
+    var lang = $(this).val();
+    var url = "{{ route('lang.switch', ':lang') }}",
+    url = url.replace(':lang', lang)
+    $.ajax({
+        type: "GET",
+        url: url,
+        data: {
+            lang: lang,
+        },
+        success: function() {
+            window.location.reload();
+        },
+        error: function() {
+            window.location.reload();
+        }
+    });
+});
+</script>
+-->
 
     <div class="mobile-header-active mobile-header-wrapper-style">
         <div class="mobile-header-wrapper-inner">
@@ -560,6 +634,30 @@ $setting = App\Models\SiteSetting::find(1);
                                     <li><a href="#">Spanish</a></li>
                                 </ul>
                             </li>
+                            <!--
+                            <body>
+                               <button class="chatbot-toggler">
+                                  <span class="material-symbols-outlined">chat!</span>
+                                  <span class="material-symbols-outlined">close</span>
+                               </button>
+                               <div class="chatbot">
+                                   <header>
+                                      <h2>Chatbot</h2>
+                                      <span class="close-btn material-symbols-outlined">close</span>
+                                    </header>
+                                    <ul class="chatbox">
+                                       <li class="chat incoming">
+                                       <span class="material-symbols-outlined">S</span>
+                                       <p>Hi there 👋<br>How can I help you today?</p>
+                                    </li>
+                                    </ul>
+                                    <div class="chat-input">
+                                       <textarea placeholder="Enter a message..." required></textarea>
+                                       <span id="send-btn" class="material-symbols-outlined">send</span>
+                                    </div>
+                               </div>
+                            </body>
+                            -->
                         </ul>
                     </nav>
                     <!-- mobile menu end -->

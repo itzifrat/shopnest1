@@ -35,6 +35,7 @@ use App\Http\Controllers\User\StripeController;
 use App\Http\Controllers\User\AllUserController;
 
 use App\Http\Controllers\User\ReviewController;
+use App\Http\Controllers\LanguageController;
  
 /*
 |--------------------------------------------------------------------------
@@ -654,6 +655,9 @@ Route::controller(AllUserController::class)->group(function(){
 
 
 }); 
+
+//Language route
+Route::get('lang/{lang}',[LanguageController::class, 'switchLang'])->name('lang.switch');
 
 
 

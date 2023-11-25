@@ -46,7 +46,7 @@
  <td> <img src="{{ asset($item['product']['product_thambnail']) }}" style="width: 40px; height:40px;" ></td>
  	<td>{{ $item['product']['product_name'] }}</td>
  	<td>{{ $item['user']['name'] }}</td>
-    <td>{{ Str::limit($item->comment, 25);  }}</td>
+    <td>{{ Str::limit($item->comment, 25)  }}</td>
 				<td>
 			@if($item->rating == NULL)
 			<i class="bx bxs-star text-secondary"></i>
