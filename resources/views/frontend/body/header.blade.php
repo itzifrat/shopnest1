@@ -9,7 +9,7 @@
                     <div class="col-xl-3 col-lg-4">
                         <div class="header-info">
                             <ul>
-                                
+
                                 <li><a href="{{ route('mycart') }}">My Cart</a></li>
                                 <li><a href="{{ route('checkout') }}">Checkout</a></li>
                                 <li><a href="{{ route('mycart') }}">Order Tracking</a></li>
@@ -30,7 +30,7 @@
                     <div class="col-xl-3 col-lg-4">
                         <div class="header-info header-info-right">
                             <ul>
-                               
+
                 <li>
                     <a class="language-dropdown-active" href="#">English <i class="fi-rs-angle-small-down"></i></a>
                     <ul class="language-dropdown">
@@ -47,7 +47,7 @@
                 </li>
 
                  <li>Need help? Call Us: <strong class="text-brand"> + 1800 900</strong></li>
-                               
+
                             </ul>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ $setting = App\Models\SiteSetting::find(1);
                     </div>
     <div class="header-right">
         <div class="search-style-2">
-            
+
             <form action="{{ route('product.search') }}" method="post">
                 @csrf
 
@@ -108,7 +108,7 @@ $setting = App\Models\SiteSetting::find(1);
                         </select>
                     </form>
                 </div>
-               
+
      <div class="header-action-icon-2">
         <a href="{{ route('compare') }}">
             <img class="svgInject" alt="Nest" src="{{ asset('frontend/assets/imgs/theme/icons/icon-compare.svg')}}" />
@@ -128,13 +128,13 @@ $setting = App\Models\SiteSetting::find(1);
 
 
                 <div class="header-action-icon-2">
-                    <a class="mini-cart-icon" href="shop-cart.html">
+                    <a class="mini-cart-icon" href="{{ route('mycart') }}">
                         <img alt="Nest" src="{{ asset('frontend/assets/imgs/theme/icons/icon-cart.svg') }}" />
                         <span class="pro-count blue" id="cartQty">0</span>
                     </a>
                     <a href="{{ route('mycart') }}"><span class="lable">Cart</span></a>
                     <div class="cart-dropdown-wrap cart-dropdown-hm2">
-                        
+
 
          <!--   // mini cart start with ajax -->
          <div id="miniCart">
@@ -142,7 +142,7 @@ $setting = App\Models\SiteSetting::find(1);
          </div>
 
           <!--   // End mini cart start with ajax -->
-           
+
 
 
 
@@ -152,8 +152,8 @@ $setting = App\Models\SiteSetting::find(1);
                                 <h4>Total <span id="cartSubTotal"> </span></h4>
                             </div>
                             <div class="shopping-cart-button">
-                                <a href="shop-cart.html" class="outline">View cart</a>
-                                <a href="shop-checkout.html">Checkout</a>
+                                <a href="{{ route('mycart') }}" class="outline">View cart</a>
+                                <a href="{{ route('checkout') }}">Checkout</a>
                             </div>
                                         </div>
                                     </div>
@@ -202,9 +202,9 @@ $setting = App\Models\SiteSetting::find(1);
 
 
  <a href="{{ route('register') }}"><span class="lable ml-0">Register</span></a>
-    
-    @endauth                        
- 
+
+    @endauth
+
 
 
 
@@ -257,7 +257,7 @@ $setting = App\Models\SiteSetting::find(1);
             </li>
               @endif
            @endforeach
-             
+
         </ul>
     </div>
                                 <div class="more_slide_open" style="display: none">
@@ -286,27 +286,27 @@ $setting = App\Models\SiteSetting::find(1);
                         <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                             <nav>
                     <ul>
-                        
+
                         <li>
                             <a class="active" href="{{ url('/') }}">Home  </a>
-                            
+
                         </li>
-    
+
         @php
 
     $categories = App\Models\Category::orderBy('category_name','ASC')->limit(6)->get();
         @endphp
 
-       @foreach($categories as $category)    
+       @foreach($categories as $category)
         <li>
             <a href="{{ url('product/category/'.$category->id.'/'.$category->category_slug) }}">{{ $category->category_name }} <i class="fi-rs-angle-down"></i></a>
 
-   @php 
+   @php
     $subcategories = App\Models\SubCategory::where('category_id',$category->id)->orderBy('subcategory_name','ASC')->get();
         @endphp
 
             <ul class="sub-menu">
-                @foreach($subcategories as $subcategory)   
+                @foreach($subcategories as $subcategory)
                 <li><a href="{{ url('product/subcategory/'.$subcategory->id.'/'.$subcategory->subcategory_slug) }}">{{ $subcategory->subcategory_name }}</a></li>
                 @endforeach
             </ul>
@@ -314,7 +314,7 @@ $setting = App\Models\SiteSetting::find(1);
         @endforeach
 
 
-                         
+
                <li>
                     <a href="{{ route('home.blog') }}">Blog</a>
                 </li>
@@ -448,7 +448,7 @@ $setting = App\Models\SiteSetting::find(1);
                         <ul class="mobile-menu font-heading">
                             <li class="menu-item-has-children">
                                 <a href="index.html">Home</a>
-                                 
+
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="shop-grid-right.html">shop</a>
@@ -485,7 +485,7 @@ $setting = App\Models\SiteSetting::find(1);
                                     </li>
                                 </ul>
                             </li>
-                            
+
                             <li class="menu-item-has-children">
                                 <a href="#">Mega menu</a>
                                 <ul class="dropdown">

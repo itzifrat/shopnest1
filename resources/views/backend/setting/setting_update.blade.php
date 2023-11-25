@@ -3,7 +3,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<div class="page-content"> 
+<div class="page-content">
 				<!--breadcrumb-->
 				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
 					<div class="breadcrumb-title pe-3">Site Setting</div>
@@ -17,21 +17,21 @@
 						</nav>
 					</div>
 					<div class="ms-auto">
-				 
+
 					</div>
 				</div>
 				<!--end breadcrumb-->
 				<div class="container">
 					<div class="main-body">
 						<div class="row">
-							 
+
 <div class="col-lg-8">
 	<div class="card">
 		<div class="card-body">
 
 		<form method="post" action="{{ route('site.setting.update') }}" enctype="multipart/form-data" >
 			@csrf
-		
+
 		<input type="hidden" name="id" value="{{ $setting->id }}">
 
 			<div class="row mb-3">
@@ -147,7 +147,7 @@
 
 
 	</div>
-	 
+
 
 
 

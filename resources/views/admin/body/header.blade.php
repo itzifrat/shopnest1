@@ -72,11 +72,11 @@ $ncount = Auth::user()->unreadNotifications()->count()
 		</a>
 		<div class="header-notifications-list">
 
-			 
+
 			 @php
 			 $user = Auth::user();
 			 @endphp
-		 
+
 		 @forelse($user->notifications as $notification)
 			<a class="dropdown-item" href="javascript:;">
 				<div class="d-flex align-items-center">
@@ -91,7 +91,7 @@ $ncount = Auth::user()->unreadNotifications()->count()
 			</a>
 			 @empty
 
-			 @endforelse  
+			 @endforelse
 
 
 		</div>
@@ -257,12 +257,12 @@ $ncount = Auth::user()->unreadNotifications()->count()
 	@php
 	    $id = Auth::user()->id;
         $adminData = App\Models\User::find($id);
-	
-	@endphp				
+
+	@endphp
 
 					<div class="user-box dropdown">
 						<a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							
+
 
 		 <img src="{{ (!empty($adminData->photo)) ? url('upload/admin_images/'.$adminData->photo):url('upload/no_image.jpg') }}" class="user-img" alt="user avatar">
 
@@ -293,3 +293,26 @@ $ncount = Auth::user()->unreadNotifications()->count()
 				</nav>
 			</div>
 		</header>
+
+
+        <!-- JavaScript -->
+<script>
+    // Function to toggle dropdown visibility
+    function toggleDropdown(linkId, dropdownId) {
+        var dropdown = document.getElementById(dropdownId);
+        dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // Add click event listeners to toggle dropdowns
+    document.getElementById('dashboardLink').addEventListener('click', function () {
+        toggleDropdown('dashboardLink', 'dashboardDropdown');
+    });
+
+    document.getElementById('earningsLink').addEventListener('click', function () {
+        toggleDropdown('earningsLink', 'earningsDropdown');
+    });
+
+    document.getElementById('downloadsLink').addEventListener('click', function () {
+        toggleDropdown('downloadsLink', 'downloadsDropdown');
+    });
+</script

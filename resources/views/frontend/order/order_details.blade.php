@@ -1,8 +1,8 @@
-@extends('dashboard') 
+@extends('dashboard')
 @section('user')
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
- 
+
 
 
   <div class="page-header breadcrumb-wrap">
@@ -32,7 +32,7 @@
 
         <div class="col-md-6">
             <div class="card">
-               <div class="card-header"><h4>Shipping Details</h4> </div> 
+               <div class="card-header"><h4>Shipping Details</h4> </div>
                <hr>
                <div class="card-body">
                  <table class="table" style="background:#F4F6FA;font-weight: 600;">
@@ -81,21 +81,21 @@
                         <th>Order Date   :</th>
                         <th>{{ $order->order_date }}</th>
                     </tr>
-                    
+
                 </table>
-                   
+
                </div>
 
             </div>
         </div>
-<!-- // End col-md-6  --> 
+<!-- // End col-md-6  -->
 
 
         <div class="col-md-6">
             <div class="card">
                <div class="card-header"><h4>Order Details
 <span class="text-danger">Invoice : {{ $order->invoice_no }} </span></h4>
-                </div> 
+                </div>
                <hr>
                <div class="card-body">
                 <table class="table" style="background:#F4F6FA;font-weight: 600;">
@@ -134,23 +134,23 @@
                         <th>Order Status:</th>
       <th><span class="badge rounded-pill bg-warning">{{ $order->status }}</span></th>
                     </tr>
-                    
+
                 </table>
-                   
+
                </div>
 
             </div>
         </div>
-<!-- // End col-md-6  --> 
+<!-- // End col-md-6  -->
 
-    </div><!-- // End Row  --> 
+    </div><!-- // End Row  -->
 
 
 
- 
-   </div> 
+
+   </div>
 <!-- // End Col md 9  -->
-  
+
 
                         </div>
                     </div>
@@ -190,7 +190,7 @@
 
             <td class="col-md-3">
                 <label>Price  </label>
-            </td> 
+            </td>
 
         </tr>
 
@@ -212,7 +212,7 @@
                 <label>{{ $item->product->vendor->name }} </label>
             </td>
             @endif
-            
+
             <td class="col-md-2">
                 <label>{{ $item->product->product_code }} </label>
             </td>
@@ -225,7 +225,7 @@
                 <label>{{ $item->color }} </label>
             </td>
             @endif
-            
+
             @if($item->size == NULL)
              <td class="col-md-1">
                 <label>.... </label>
@@ -241,23 +241,23 @@
 
             <td class="col-md-3">
                 <label>${{ $item->price }} <br> Total = ${{ $item->price * $item->qty }}   </label>
-            </td> 
+            </td>
 
         </tr>
         @endforeach
 
     </tbody>
 </table>
-                        
+
                     </div>
-                    
+
                 </div>
 
 <!--  // Start Return Order Option  -->
 
 @if($order->status !== 'deliverd')
 
-@else 
+@else
 
 @php
 $order = App\Models\Order::where('id',$order->id)->where('return_reason','=',NULL)->first();
@@ -281,19 +281,19 @@ $order = App\Models\Order::where('id',$order->id)->where('return_reason','=',NUL
 
 @endif
 <!--  // End Return Order Option  -->
-                
 
 
 
 
 
-            </div> 
+
+            </div>
         </div>
 
 
 
 
- 
+
 
 
 @endsection

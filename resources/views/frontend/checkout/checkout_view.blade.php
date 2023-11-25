@@ -1,14 +1,14 @@
 @extends('frontend.master_dashboard')
 @section('main')
 @section('title')
-   Checkout Page 
+   Checkout Page
 @endsection
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
  <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a> 
+                    <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
                     <span></span> Checkout
                 </div>
             </div>
@@ -24,7 +24,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-7">
-    
+
     <div class="row">
         <h4 class="mb-30">Billing Details</h4>
         <form method="post" action="{{ route('checkout.store') }}">
@@ -38,7 +38,7 @@
                     <input type="email" required="" name="shipping_email" value="{{ Auth::user()->email }}">
                 </div>
             </div>
-                           
+
 
 
 	<div class="row shipping_calculator">
@@ -49,7 +49,7 @@
 	                @foreach($divisions as $item)
 	                <option value="{{ $item->id }}">{{ $item->division_name }}</option>
 	                @endforeach
-	                 
+
 	            </select>
 	        </div>
 	    </div>
@@ -62,9 +62,9 @@
         <div class="form-group col-lg-6">
             <div class="custom_select">
                 <select name="district_id" class="form-control">
-                  
-                
-                     
+
+
+
                 </select>
             </div>
         </div>
@@ -79,10 +79,15 @@
     <div class="form-group col-lg-6">
         <div class="custom_select">
             <select name="state_id" class="form-control">
-                
-                 
+
+
             </select>
         </div>
+
+
+
+
+
     </div>
                                 <div class="form-group col-lg-6">
       <input required="" type="text" name="shipping_address" placeholder="Address *" value="{{ Auth::user()->address }}">
@@ -90,31 +95,31 @@
                             </div>
 
 
- 
 
-  
+
+
                             <div class="form-group mb-30">
         <textarea rows="5" placeholder="Additional information" name="notes"></textarea>
                             </div>
 
- 
- 
-                       
+
+
+
                     </div>
                 </div>
 
-                
+
 <div class="col-lg-5">
 <div class="border p-40 cart-totals ml-30 mb-50">
     <div class="d-flex align-items-end justify-content-between mb-30">
         <h4>Your Order</h4>
-         
+
     </div>
     <div class="divider-2 mb-30"></div>
     <div class="table-responsive order_table checkout">
         <table class="table no-border">
             <tbody>
-               @foreach($carts as $item) 
+               @foreach($carts as $item)
                 <tr>
                     <td class="image product-thumbnail"><img src="{{ asset($item->options->image) }} " alt="#" style="width:50px; height: 50px;" ></td>
                     <td>
@@ -123,7 +128,7 @@
 
                          <strong>Color :{{ $item->options->color }} </strong>
                          <strong>Size : {{ $item->options->size }}</strong>
-                             
+
                         </div>
                     </td>
                     <td>
@@ -153,7 +158,7 @@
                     <h4 class="text-brand text-end">${{ $cartTotal }}</h4>
                 </td>
             </tr>
-            
+
             <tr>
                 <td class="cart_total_label">
                     <h6 class="text-muted">Coupon Name</h6>
@@ -192,14 +197,14 @@
                     <h4 class="text-brand text-end">${{ $cartTotal }}</h4>
                 </td>
             </tr>
-            
-           
-           
+
+
+
 
        @endif
 
 
-            
+
         </tbody>
     </table>
 
@@ -213,15 +218,15 @@
         <h4 class="mb-30">Payment</h4>
         <div class="payment_option">
             <div class="custome-radio">
-                
+
                 <input class="form-check-input" required="" type="radio" name="payment_option" value="stripe" id="exampleRadios3" checked="">
-                
+
                 <label class="form-check-label" for="exampleRadios3" data-bs-toggle="collapse" data-target="#bankTranfer" aria-controls="bankTranfer">Stripe</label>
             </div>
             <div class="custome-radio">
-                
+
                 <input class="form-check-input" required="" type="radio" name="payment_option" value="cash" id="exampleRadios4" checked="">
-                
+
                 <label class="form-check-label" for="exampleRadios4" data-bs-toggle="collapse" data-target="#checkPayment" aria-controls="checkPayment">Cash on delivery</label>
             </div>
             <div class="custome-radio">
@@ -248,7 +253,7 @@
 
 
 <script type="text/javascript">
-  		
+
   		$(document).ready(function(){
   			$('select[name="division_id"]').on('change', function(){
   				var division_id = $(this).val();
@@ -273,8 +278,8 @@
   		});
 
 
-  		// Show State Data 
-        
+  		// Show State Data
+
   		$(document).ready(function(){
   			$('select[name="district_id"]').on('change', function(){
   				var district_id = $(this).val();
@@ -299,7 +304,7 @@
   				}
   			});
   		});
-    
+
 
   </script>
 

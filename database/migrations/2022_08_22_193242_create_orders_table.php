@@ -18,7 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('division_id');
             $table->unsignedBigInteger('district_id');
-            $table->unsignedBigInteger('state_id');
+            $table->unsignedBigInteger('state_id')->nullable();
+
             $table->string('name');
             $table->string('email');
             $table->string('phone');
@@ -43,7 +44,7 @@ return new class extends Migration
             $table->string('cancel_date')->nullable();
             $table->string('return_date')->nullable();
             $table->string('return_reason')->nullable();
-            $table->string('status'); 
+            $table->string('status');
             $table->timestamps();
         });
     }
