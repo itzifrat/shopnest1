@@ -61,7 +61,7 @@ $setting = App\Models\SiteSetting::find(1);
             <div class="container">
                 <div class="header-wrap">
                     <div class="logo logo-width-1">
-                        <a href="index.html"><img src="{{ asset('frontend/assets/imgs/theme/logo.png')   }}" alt="logo " /></a>
+                        <a href="{{ url('/') }}"><img src="{{ asset('frontend/assets/imgs/theme/logo.png')   }}" alt="logo " /></a>
                     </div>
     <div class="header-right">
         <div class="search-style-2">
