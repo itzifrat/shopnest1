@@ -1,4 +1,4 @@
- 
+
      @php
 $setting = App\Models\SiteSetting::find(1);
         @endphp
@@ -163,7 +163,7 @@ $setting = App\Models\SiteSetting::find(1);
                             <li><a href="#">Cheese</a></li>
                         </ul>
                     </div>
-                  
+
                 </div>
         </section>
         <div class="container pb-30 wow animate__animated animate__fadeInUp" data-wow-delay="0">
@@ -175,15 +175,51 @@ $setting = App\Models\SiteSetting::find(1);
                     <p class="font-sm mb-0">&copy; 2023, <strong class="text-brand">SHOPNEST</strong> -  {{ $setting->copyright ?? 'None'}}</p>
                 </div>
                 <div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">
-                     
+
                     <div class="hotline d-lg-inline-flex">
-                        <img src="{{ asset('frontend/assets/imgs/theme/icons/phone-call.svg') }}" alt="hotline" />
+                        <!-- <img src="{{ asset('frontend/assets/imgs/theme/icons/phone-call.svg') }}" alt="hotline" />
+
                         <p>{{ $setting->support_phone ?? 'None'}}<span>24/7 Support Center</span></p>
+
+                        -->
+
+
+                      <!-- DARK MODE >  LIGHT MODE -->
+
+                        <div>
+
+                            <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+
+                            <!-- Include the appropriate mode CSS -->
+                            @if (isset($darkMode) && $darkMode)
+                                <link rel="stylesheet" href="{{ asset('main.css') }}">
+                            @else
+                                <link rel="stylesheet" href="{{ asset('main.css') }}">
+                            @endif
+                        </head>
+                        <body>
+
+                            <!-- Your website content goes here -->
+
+                            <!-- Add this button where the user can toggle dark/light mode -->
+                            <button id="mode-toggle">Toggle Dark/Light Mode</button>
+
+                            <!-- Include the mode-switching JavaScript -->
+                            <script src="{{ asset('js/mode-switch.js') }}"></script>
+                        </div>
+
+                        <!-- END DARK MODE >  LIGHT MODE -->
+
+
+
                     </div>
                 </div>
+
+
                 <div class="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
                     <div class="mobile-social-icon">
-    <h6>Follow Us</h6>
+
+                        <h6>Follow Us</h6>
     <a href="{{ $setting->facebook ?? 'None' }}"><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-facebook-white.svg') }}" alt="" /></a>
     <a href="{{ $setting->twitter ?? 'None'}}"><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-twitter-white.svg') }}" alt="" /></a>
     <a href="#"><img src="{{ asset('frontend/assets/imgs/theme/icons/icon-instagram-white.svg') }}" alt="" /></a>

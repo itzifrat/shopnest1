@@ -10551,7 +10551,7 @@ footer .hotline img {
 }
 
 /***************************
-    Page section margin 
+    Page section margin
 ****************************/
 .mtb-0 {
   margin: 0;
@@ -12396,3 +12396,38 @@ footer .hotline img {
   }
 }
 /*# sourceMappingURL=main.css.map */
+
+
+/*# ................................................................................ */
+
+/*# DARK MODE > LIGHT MODE */
+
+/* base.css */
+/* Common styles go here */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Add other common styles here */
+
+
+/* light-mode.css */
+/* Light mode styles go here */
+body {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Add other light mode styles here */
+
+
+/* dark-mode.css */
+/* Dark mode styles go here */
+body.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Add other dark mode styles here */
